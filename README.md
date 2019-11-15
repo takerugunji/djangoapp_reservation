@@ -1,1 +1,1 @@
-# Djangoapp_plat
+# djangoapp_reservtion
