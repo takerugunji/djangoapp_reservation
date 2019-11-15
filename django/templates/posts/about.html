@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+About
+{% endblock %}
+
+{% block other_tips %}
+<style type="text/css">
+    .jumbotron {
+        background-image: url("{% static 'posts/gesthouse.jpg' %}");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding-top: 150px;
+    }
+
+    .jumbotron p,
+    h1 {
+        color: #FFF;
+    }
+</style>
+{% endblock %}
+
+{% block body_block %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">platについて</h1>
+        <p class="lead">platは、フランス語で"皿"という意味があり、大人がゆったり自然を感じながら贅沢な時間を過ごせるぷらっと帰れる"受け皿"の様な場所を目指しています。
+        </p>
+    </div>
+</section>
+
+<div class="container">
+    <h3 class="mt-4">宿泊情報</h3>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-6 col-lg-8 themed-grid-col">
+            <p><strong>お部屋</strong></p>
+            <img src="{% static 'posts/room_detail1.jpg' %}" class="img-fluid img-thumbnail">
+            <img src="{% static 'posts/room_detail2.jpg' %}" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-6 col-lg-4 themed-grid-col">
+            <p>料金・空き状況は宿泊予約ページでご確認ください。</p>
+            <ul>
+                <li>2～5名様まで</li>
+                <li>布団スタイル</li>
+                <li>お子さまも歓迎</li>
+            </ul>
+            <p><a href="#" class="btn btn-primary my-2">宿泊予約をする</a></p>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6 col-sm-4 themed-grid-col">
+            <p><strong>営業時間</strong></p>
+            <ul>
+                <li>月〜水、金〜日、祝日　10:00〜17:00</li>
+                <li>定休日　木</li>
+            </ul>
+        </div>
+        <div class="col-6 col-sm-4 themed-grid-col">
+            <p><strong>設備</strong></p>
+            <ul>
+                <li>洗濯機 200円</li>
+                <li>衣類乾燥機 300円</li>
+                <li>Free Wi-fi</li>
+                <li>テレビ 共有スペースに1台</li>
+            </ul>
+        </div>
+        <div class="col-6 col-sm-4 themed-grid-col">
+            <p><strong>チェックイン・チェックアウト</strong></p>
+            <ul>
+                <li>チェックイン 15:00-20:00</li>
+                <li>チェックアウト 10:00</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>運営メンバー</h3>
+</div>
+
+{% endblock %}

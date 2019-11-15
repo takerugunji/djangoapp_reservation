@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+ペンション宿泊予約サイト | plat
+{% endblock %}
+
+{% block other_tips %}
+<style type="text/css">
+    .jumbotron {
+        height: 100vh;
+        background-image: url("{% static 'posts/home.jpeg' %}");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .jumbotron p,
+    h1 {
+        color: #FFF;
+    }
+</style>
+{% endblock %}
+
+{% block body_block %}
+<section class="jumbotron text-center d-flex align-items-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">plat</h1>
+        <p class="lead">〜このサイトは宿泊予約サイトです。〜</p>
+        </br>
+        <p>
+            <a class="btn btn-primary my-2" href="#">宿泊予約をする</a>
+            {% if user.is_authenticated %}
+            <a class="btn btn-primary my-2" href="{% url 'accounts:profile' user.pk %}">マイページはこちら</a>
+            {% else %}
+            <a class="btn btn-primary my-2" href="{% url 'accounts:signup' %}">会員登録はこちら</a>
+            {% endif %}
+        </p>
+    </div>
+</section>
+
+<div class="container marketing text-center align-items-center">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'posts/food.jpg' %}" alt="Generic placeholder image" width="140"
+                height="140">
+            <h2>食べる</h2>
+            <p>グルメと近隣の店舗情報をお届けします。</p>
+            <p><a class="btn btn-secondary" href="#" role="button">詳細はこちら &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'posts/enjoy.jpg' %}" alt="Generic placeholder image" width="140"
+                height="140">
+            <h2>遊ぶ</h2>
+            <p>レジャースポットや体験情報をお届けします。</p>
+            <p><a class="btn btn-secondary" href="#" role="button">詳細はこちら &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'posts/gesthouse.jpg' %}" alt="Generic placeholder image"
+                width="140" height="140">
+            <h2>泊まる</h2>
+            <p>宿泊施設情報をお届けします。</p>
+            <p><a class="btn btn-secondary" href="{% url 'posts:about' %}" role="button">詳細はこちら &raquo;</a></p>
+        </div>
+    </div>
+</div>
+
+<hr>
+<div class="container">
+    <h3 style="text-align: center">最新の投稿</h3>
+
+    <div class="row">
+        {% for post in posts.all|slice:":3" %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{ post.image.url }}" width="100%" height="225px">
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                    dy=".3em">{{ post.title }}</text>
+                <div class="card-body">
+                    <p class="card-text">{{ post.summary }}</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                href="{% url 'post_detail' post.id %}">記事をみる</a></button>
+                    </div>
+                    <small class="text-muted">{{ post.published }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "registrated_base.html" %}
+
+{% block content %}
+
+    <table class="table borderless">
+        <tbody>
+            <tr>
+                <th scope="row">名前</th>
+                <td>{{ user.last_name }}{{ user.first_name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">性別</th>
+                <td>{{ user.gendar }}</td>
+            </tr>
+            <tr>
+                <th scope="row">電話番号</th>
+                <td>{{ user.phone }}</td>
+            </tr>
+            <tr>
+                <th scope="row">E-mail</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th scope="row">生年月日</th>
+                <td>{{ user.birth_date }}</td>
+            </tr>
+            <tr>
+                <th scope="row">住所</th>
+                <td>{{ user.location }}</td>
+            </tr>
+            <tr>
+                <th scope="row">入会日</th>
+                <td>{{ user.date_joined }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% if user.is_authenticated %}
+    <a href="{% url 'accounts:profile_edit' user.pk %}"><button type="submit" class="btn btn-primary">プロフィール編集</button></a>
+    {% endif %}
+
+{% endblock %}

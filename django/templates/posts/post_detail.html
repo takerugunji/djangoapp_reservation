@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title_block %}
+Blog detail
+{% endblock %}
+
+{% block other_tips %}
+
+{% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+    {{ post.title }}
+    <br /><br />
+    {{ post.published }}
+
+    <br /><br />
+    <img src="{{ post.image.url }}" />
+    <br /><br />
+    {{ post.body }}
+</div>
+
+{% endblock %}

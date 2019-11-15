@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block title_block %}
+Reservation
+{% endblock %}
+
+{% block other_tips %}
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+<style type="text/css">
+    .jumbotron {
+        background-image: url("{% static 'posts/gesthouse.jpg' %}");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding-top: 150px;
+    }
+
+    .jumbotron p,
+    h1 {
+        color: #FFF;
+    }
+</style>
+{% endblock %}
+
+{% block body_block %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">宿泊予約</h1>
+        <p class="lead">このページでは宿泊予約を受け付けています。
+        </p>
+    </div>
+</section>
+
+<div class="container mt-3" style="padding-top: 60px;">
+    {{ form.media }}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">予約する</button>
+    </form>
+</div>
+{% endblock %}
