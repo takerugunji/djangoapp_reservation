@@ -1,1 +1,1 @@
-# djangoapp_reservtion
+# djangoapp_reservation
