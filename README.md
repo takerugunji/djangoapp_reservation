@@ -27,4 +27,8 @@
   - ローカルで開発環境構築(docker-compose up)
 
 - AWS
+  - AWS環境構築
+  - デプロイ(Docker + Django)
+
+- Circle CI
   - 
