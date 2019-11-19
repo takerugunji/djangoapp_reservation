@@ -11,9 +11,20 @@
     - Django2.2.4 
   - データベース
     - PostgreSQL10.10
+  - 開発環境
+    - Docker
+    - Docker-Compose
+    - Webアプリケーション(Django)・Webサーバ(Nginx)・APサーバ(Gunicorn)・Database(PostgreSQL)
 - 機能一覧
   - ページネーション
-  - カレンダー機能(django-bootstrap-datepicker-plus)
+  - カレンダー機能(django-bootstrap-datepicker-plus
+
+# 工夫したこと
+
+# 苦労したこと
+  - Django
+    - DB関連
+      - 最初DefaultのUserでアプリを作成しており、後からCustom Userをmigrateしようとしたらうまくいかず、showmigrationsでmigration履歴を確認したり、-fakeコマンドを使ってmigrationし直したりしましたがうまくいかず、結局いろいろ試した結果０からmakemigrationsし直すのがベストだと気付き、やり直したらうまくいった。
 
 # これからすること
 - ウェブサイト
