@@ -7,9 +7,10 @@ services:
       - "3031"
     depends_on:
       - postgres
-    command: bash -c "python manage.py migrate && gunicorn mydjangoapp.wsgi -b 0.0.0.0:3031"
+    command: bash -c "gunicorn mydjangoapp.wsgi -b 0.0.0.0:3031" # python manage.py migrate &&
     volumes:
       - "staticdata:/opt/static/"
+      - "mediadata:/opt/pics/"
 
   nginx:
     restart: always
@@ -29,8 +30,9 @@ services:
     volumes:
       - "dbdata:/var/lib/postgresql/data"
     environment:
-      POSTGRES_PASSWORD: bdrt3tq5
+      POSTGRES_PASSWORD: postgres
 
 volumes:
   dbdata:
   staticdata:
+  mediadata:
