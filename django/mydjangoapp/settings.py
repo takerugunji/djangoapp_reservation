@@ -90,11 +90,14 @@ WSGI_APPLICATION = 'mydjangoapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_db',  
-        'USER': 'gunjitakeru', 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'django_db',
+        # 'USER': 'gunjitakeru', 
+        'NAME': 'postgres', # docker開発環境用
+        'USER': 'postgres', # docker開発環境用
         'PASSWORD': 'bdrt3tq5',  # 作成時にdocker-compose.ymlで設定
-        'HOST': 'localhost',  # コンテナのサーバ名
+        # 'HOST': 'localhost',  # コンテナのサーバ名
+        'HOST': 'postgres',  # docker開発環境用
         'PORT': 5432,
     }
 }
@@ -136,6 +139,7 @@ USE_TZ = True
 
 # posts
 STATIC_URL = '/static/'
+STATIC_ROOT = '/opt/static' # volumeのマウント先
 MEDIA_URL = '/pics/'
 MEDIA_ROOT = BASE_DIR
 
