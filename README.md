@@ -22,12 +22,12 @@
 # 工夫したこと
   - Docker
     - docker-compose
-      よく使うコマンドはMakefileにまとめた。
+      - よく使うコマンドはMakefileにまとめた。
 
 # 苦労したこと
   - Django
     - DB関連
-      最初DefaultのUserでアプリを作成しており、後からCustom Userをmigrateしようとしたらうまくいかず、showmigrationsでmigration履歴を確認したり、-fakeコマンドを使ってmigrationし直したりしましたがうまくいかず、結局いろいろ試した結果０からmakemigrationsし直すのがベストだと気付き、やり直したらうまくいった。
+      - 最初DefaultのUserでアプリを作成しており、後からCustom Userをmigrateしようとしたらうまくいかず、showmigrationsでmigration履歴を確認したり、-fakeコマンドを使ってmigrationし直したりしましたがうまくいかず、結局いろいろ試した結果０からmakemigrationsし直すのがベストだと気付き、やり直したらうまくいった。
 
 # これからすること
 - ウェブサイト
