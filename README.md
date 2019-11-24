@@ -17,7 +17,7 @@
     - Webアプリケーション(Django)・Webサーバ(Nginx)・APサーバ(Gunicorn)・Database(PostgreSQL)
 - 機能一覧
   - ページネーション
-  - カレンダー機能(django-bootstrap-datepicker-plus
+  - カレンダー機能(django-bootstrap-datepicker-plus)
 
 # 工夫したこと
   - Docker
