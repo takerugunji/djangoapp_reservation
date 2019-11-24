@@ -13,18 +13,21 @@
     - PostgreSQL10.10
   - 開発環境
     - Docker
-    - Docker-Compose
+    - docker-compose
     - Webアプリケーション(Django)・Webサーバ(Nginx)・APサーバ(Gunicorn)・Database(PostgreSQL)
 - 機能一覧
   - ページネーション
   - カレンダー機能(django-bootstrap-datepicker-plus
 
 # 工夫したこと
+  - Docker
+    - docker-compose
+      よく使うコマンドはMakefileにまとめた。
 
 # 苦労したこと
   - Django
     - DB関連
-      - 最初DefaultのUserでアプリを作成しており、後からCustom Userをmigrateしようとしたらうまくいかず、showmigrationsでmigration履歴を確認したり、-fakeコマンドを使ってmigrationし直したりしましたがうまくいかず、結局いろいろ試した結果０からmakemigrationsし直すのがベストだと気付き、やり直したらうまくいった。
+      最初DefaultのUserでアプリを作成しており、後からCustom Userをmigrateしようとしたらうまくいかず、showmigrationsでmigration履歴を確認したり、-fakeコマンドを使ってmigrationし直したりしましたがうまくいかず、結局いろいろ試した結果０からmakemigrationsし直すのがベストだと気付き、やり直したらうまくいった。
 
 # これからすること
 - ウェブサイト
@@ -32,10 +35,6 @@
   - コード整理
   - テスト機能追加
   - UI整理
-
-- Docker
-  - file整理（requirements, dockerfile, docker-compose.yml)
-  - ローカルで開発環境構築(docker-compose up)
 
 - AWS
   - AWS環境構築
