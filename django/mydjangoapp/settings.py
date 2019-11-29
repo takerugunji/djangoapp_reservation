@@ -91,13 +91,13 @@ WSGI_APPLICATION = 'mydjangoapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'django_db',
-        # 'USER': 'gunjitakeru', 
-        'NAME': 'postgres', # docker開発環境用
-        'USER': 'postgres', # docker開発環境用
+        'NAME': 'django_db',
+        'USER': 'gunjitakeru', 
+        #'NAME': 'postgres', # docker開発環境用
+        #'USER': 'postgres', # docker開発環境用
         'PASSWORD': 'bdrt3tq5',  # 作成時にdocker-compose.ymlで設定
-        # 'HOST': 'localhost',  # コンテナのサーバ名
-        'HOST': 'postgres',  # docker開発環境用
+        'HOST': 'localhost',  # コンテナのサーバ名
+        # 'HOST': 'postgres',  # docker開発環境用
         'PORT': 5432,
     }
 }
