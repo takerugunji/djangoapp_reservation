@@ -6,7 +6,7 @@ class ReservationForm(forms.ModelForm):
 
     class Meta:
         model = Reservation
-        fields = ('check_in', 'check_out', 'zip_code', 'address1', 'address2',) # 'last_name', 'first_name', 'email', 'phone', 
+        fields = ('check_in', 'check_out', 'number_adult', 'number_child', 'zip_code', 'address1', 'address2',) # 'last_name', 'first_name', 'email', 'phone', 
         widgets = {
             'check_in': datetimepicker.DatePickerInput(
                 format='%Y-%m-%d',
