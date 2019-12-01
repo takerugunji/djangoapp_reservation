@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.validators import RegexValidator
 
-NUMBER = [
+NUMBER = (
     ('0', '0'),
     ('1', '1'),
     ('2', '2'),
@@ -14,15 +14,15 @@ NUMBER = [
     ('8', '8'),
     ('9', '9'),
     ('10', '10'),
-    ]
+)
 
 class Reservation(models.Model):
 
     check_in = models.DateField(verbose_name='チェックイン', blank=False, null=True,)
     check_out = models.DateField(verbose_name='チェックアウト', blank=False, null=True,)
 
-    number_adult = models.IntegerField(verbose_name='人数(大人)', blank=False, null=True, default='0', choices=NUMBER)
-    number_child = models.IntegerField(verbose_name='人数(子供)', blank=False, null=True, default='0', choices=NUMBER)
+    number_adult = models.CharField(verbose_name='人数(大人)', max_length=2, blank=False, null=True, default='0', choices=NUMBER)
+    number_child = models.CharField(verbose_name='人数(子供)', max_length=2, blank=False, null=True, default='0', choices=NUMBER)
     
     zip_code = models.CharField(verbose_name='郵便番号', max_length=8, blank=False, null=True,)
     address1 = models.CharField(verbose_name='都道府県',max_length=40,blank=False, null=True,)
