@@ -13,3 +13,6 @@ class ReservationFormView(LoginRequiredMixin, generic.FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+    
+    def get_success_url(self):
+        return resolve_url('reservation:reservation_confirm',) # pk=self.kwargs['pk'])
